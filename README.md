@@ -2,7 +2,11 @@
 
 İngilizce kelimeleri Türkçe karşılıklarıyla kaydetmek, tekrar etmek ve öğrenme durumunu takip etmek için geliştirilmiş React uygulaması. Yapay Zeka Destekli Web Geliştirme eğitiminin final çalışmasıdır.
 
-Dağınık kelime notlarını tek bir kişisel çalışma alanında birleştirir; tekrar kartları ve kısa testlerle düzenli öğrenmeyi destekler. Üyelik, backend, ücretli API veya API anahtarı gerektirmez.
+**[Canlı uygulamayı aç](https://english-vocabulary-tracker-ten.vercel.app)** · **[GitHub kaynak kodları](https://github.com/ahmetemresanli/english-vocabulary-tracker)**
+
+## Projenin amacı
+
+Lexi, İngilizce kelime öğrenimini kolaylaştırmak için dağınık kelime notlarını kişisel bir çalışma alanında birleştirir. Kullanıcıların kelimeleri Türkçe karşılıklarıyla kaydetmesini, tekrar kartları (flashcard) ile çalışmasını, kısa testler (quiz) çözmesini ve öğrenme ilerlemesini takip etmesini sağlar. Üyelik, sunucu uygulaması, ücretli API veya API anahtarı gerektirmez.
 
 ## Özellikler
 
@@ -13,30 +17,39 @@ Dağınık kelime notlarını tek bir kişisel çalışma alanında birleştirir
 - Çevrilebilir flashcards, ileri / geri gezinme, karıştırma ve öğrenme durumu değiştirme.
 - En fazla 10 soruluk quiz, dört farklı seçenek, anlık yanıt kontrolü ve sonuç özeti.
 - LocalStorage kalıcılığı, bozuk kayıt kontrolü ve yazma hatası bildirimi.
-- Açık / koyu tema, responsive tasarım, klavye erişimi ve odak yönetimli modal formlar.
+- Açık / koyu tema, farklı ekran boyutlarına uyumlu tasarım, klavye erişimi ve odak yönetimli modal formlar.
 - Kullanıcının seçimiyle eklenen, açıkça demo olarak belirtilen 8 örnek kelime.
 
 ## Teknolojiler
 
-React 19, Vite 8, JavaScript / JSX, modern CSS, Lucide React, LocalStorage ve ESLint. Testlerde Node.js test runner kullanılır.
+- **React 19:** Bileşen tabanlı kullanıcı arayüzü ve durum yönetimi.
+- **Vite 8:** Yerel geliştirme sunucusu ve üretim derlemesi.
+- **JavaScript / JSX ve CSS:** Uygulama mantığı, arayüz, tema ve farklı ekran boyutlarına uyumlu tasarım.
+- **Lucide React:** Arayüz simgeleri.
+- **LocalStorage:** Kelimelerin ve tema tercihinin tarayıcıda saklanması.
+- **ESLint:** Statik kod kontrolü.
+- **Node.js test çalıştırıcısı:** Veri ve quiz mantığı için otomatik testler.
+- **Playwright / Chromium:** İsteğe bağlı kurulumla çalıştırılan tarayıcı testleri.
+- **Vercel:** Canlı uygulamanın yayımlanması.
 
 ## Kurulum
 
 Node.js 22.12+ (veya Vite 8 ile uyumlu daha yeni bir sürüm) ve npm gerekir.
 
 ```bash
-# GitHub deposunu klonladıktan sonra proje klasöründe:
+git clone https://github.com/ahmetemresanli/english-vocabulary-tracker.git
+cd english-vocabulary-tracker
 npm ci
 npm run dev
 ```
 
-Terminalde gösterilen yerel adresi açın. Diğer komutlar:
+Terminalde gösterilen yerel adresi açın. Ortam değişkeni veya API anahtarı gerekmez. Üretim önizlemesi için önce `npm run build`, ardından `npm run preview` çalıştırın. Diğer komutlar:
 
 ```bash
-npm run build    # dist/ production çıktısı
-npm run preview  # production çıktısını yerelde görüntüle
-npm run lint    # statik kod kontrolü
-npm test        # veri ve quiz mantığı testleri
+npm run build    # dist/ klasöründe üretim derlemesi oluşturur
+npm run preview  # Derlenen uygulamayı yerelde önizler
+npm run lint     # Statik kod kontrolü yapar
+npm test         # Veri ve quiz mantığı testlerini çalıştırır
 ```
 
 ## Proje yapısı
@@ -81,37 +94,33 @@ Codex'in kullanıldığı başlıca süreçler:
 
 - **Planlama:** Gereksinimlerin özelliklere, sayfalara ve geliştirme adımlarına ayrılması.
 - **React bileşenleri:** Kelime formu, liste, modal, dashboard, flashcards ve quiz akışlarının bileşenler halinde geliştirilmesi.
-- **Stil düzenlemeleri:** CSS stilleri, açık/koyu tema ve farklı ekran genişliklerine uygun responsive düzenlerin hazırlanması ve iyileştirilmesi.
+- **Arayüz tasarımı ve stil düzenlemeleri:** CSS stilleri, açık/koyu tema ve farklı ekran genişliklerine uygun responsive düzenlerin hazırlanması ve iyileştirilmesi.
+- **Test:** Veri ve quiz mantığına yönelik otomatik testlerin hazırlanması, tarayıcı test akışının oluşturulması ve lint/build/test çıktılarının değerlendirilmesi.
 - **Hata ayıklama:** Veri doğrulama, LocalStorage ve kullanıcı etkileşimlerindeki sorunların incelenmesi; düzeltmelerin lint, build ve testlerle kontrol edilmesi.
 
-Codex geliştirme sürecinde kullanılmıştır; çalışan uygulamada OpenAI API çağrısı veya yapay zeka servisi bulunmaz.
+**ChatGPT**, bu teslim sürecinde proje gereksinimlerinin, README içeriğinin ve yapay zeka kullanım açıklamasının konuşma üzerinden netleştirilmesinde kullanılmıştır. Planlama, bileşen geliştirme, arayüz tasarımı, test ve hata ayıklamaya yönelik dosya işlemleri mevcut proje açıklamasında Codex'e atfedilir; ChatGPT'nin aynı geliştirme işlemlerini ayrıca gerçekleştirdiğine ilişkin doğrulanmış bir kayıt bulunmadığından böyle bir katkı iddia edilmez.
 
-## GitHub ve Vercel teslim hazırlığı
+Yapay zeka araçları geliştirme ve dokümantasyon sürecinde yardımcı olarak kullanılmıştır. Çalışan uygulamada OpenAI API çağrısı veya yapay zeka servisi bulunmaz. Test sonuçları aşağıda tarih ve kapsamlarıyla belirtilmiştir.
 
-GitHub deposu ve canlı uygulama adresi henüz eklenmedi. Yayımladıktan sonra aşağıdaki alanları gerçek bağlantılarla güncelleyin:
+## Proje bağlantıları ve yayın
 
-- **Public GitHub repository:** Teslim sırasında eklenecek.
-- **Canlı uygulama (Vercel):** Teslim sırasında eklenecek.
+- **GitHub deposu:** [ahmetemresanli/english-vocabulary-tracker](https://github.com/ahmetemresanli/english-vocabulary-tracker)
+- **Canlı uygulama:** [Lexi — Vercel](https://english-vocabulary-tracker-ten.vercel.app)
 
-1. GitHub üzerinde **Public** görünürlükte bir repository oluşturun. Yerel proje henüz Git deposu değilse `git init` çalıştırın; commit öncesinde `git status --short` ile dosyaları inceleyin. Kaynak kodu, `package-lock.json`, README, testler ve `docs/` içeriğini dahil edin.
-2. `node_modules/`, `dist/`, `.env`, `.env.*` ve `.vercel/` dosyalarını paylaşmayın. Bu yollar `.gitignore` içinde hariç tutulur; yalnızca gizli değer içermeyen `.env.example` dosyalarına izin verilir. Uygulama ortam değişkeni veya API anahtarı gerektirmez. Daha önce takip edilmiş hassas dosyalar varsa `.gitignore` bunları geçmişten kaldırmaz; public paylaşım öncesi takip listesini ve geçmişi kontrol edin.
-3. Commit oluşturup GitHub deposuna push edin. `package.json` içindeki `private: true`, yanlışlıkla npm yayını yapılmasını engeller; GitHub deposunun public olmasıyla çelişmez.
-4. Vercel üzerinde GitHub deposunu içe aktarın. Root Directory proje kökü, Framework Preset **Vite**, Install Command `npm ci`, Build Command `npm run build`, Output Directory `dist` olmalıdır. Node.js için **22.x** (en az 22.12) veya uyumlu daha yeni bir sürüm kullanın; ortam değişkeni eklemek gerekmez.
-5. Deploy sonrasında canlı adreste kelime ekleme, sayfa yenilemede kalıcılık, flashcards, quiz ve mobil görünümü kontrol edin. Yerel veriler farklı origin kullanan Vercel adresine taşınmaz.
-6. Yukarıdaki bağlantıları güncelleyin ve eğitim platformuna repository ile canlı uygulama bağlantılarını teslim edin.
+Projenin geliştirme, test ve yayın aşamaları tamamlanmıştır. Uygulama Vercel üzerinde statik site olarak sunulur. Yayın yapılandırması:
 
-Bu hazırlık sırasında GitHub repository oluşturulmadı, push veya Vercel deploy işlemi yapılmadı. Bu çalışma alanında kullanılabilir Git metaverisi bulunmadığından takip edilen dosyalar ve commit geçmişi doğrulanamadı.
+| Ayar | Değer |
+| --- | --- |
+| Proje kökü | Depo kök dizini |
+| Çatı seçimi | Vite |
+| Bağımlılık kurulumu | `npm ci` |
+| Derleme komutu | `npm run build` |
+| Çıktı klasörü | `dist` |
+| Ortam değişkenleri | Gerekmiyor |
 
-### Yayın yapılandırması
+Navigasyon uygulama içi durum yönetimi kullandığından sunucu tarafında yönlendirme kuralı gerektirmez. Yerel geliştirme adresindeki tarayıcı verileri farklı bir origin kullanan canlı uygulamaya otomatik taşınmaz.
 
-Uygulama Vercel ve Netlify üzerinde statik site olarak yayımlanabilir:
-
-- Build komutu: `npm run build`
-- Çıktı klasörü: `dist`
-- Vercel framework: Vite
-- Netlify yapılandırması: depodaki `netlify.toml`
-
-Navigasyon uygulama içi state kullandığından sunucu tarafında route rewrite gerektirmez. GitHub deposu oluşturma, push ve canlı deploy yapılmamıştır.
+Depoda alternatif statik yayın için `netlify.toml` yapılandırması da bulunur. `node_modules/`, `dist/`, hassas `.env` dosyaları ve `.vercel/` Git dışında tutulur. `package.json` içindeki `private: true`, npm üzerinde yanlışlıkla paket yayını yapılmasını engeller; GitHub deposunun görünürlüğünü belirlemez.
 
 ## Sınırlılıklar
 
@@ -122,7 +131,7 @@ Navigasyon uygulama içi state kullandığından sunucu tarafında route rewrite
 
 ## Gelecek geliştirmeler
 
-JSON içe/dışa aktarma, aralıklı tekrar, kelime kategorileri, quiz geçmişi ve çevrimdışı PWA desteği.
+İleride değerlendirilebilecek, mevcut sürümde bulunmayan özellikler: JSON içe/dışa aktarma, aralıklı tekrar, kelime kategorileri, quiz geçmişi ve çevrimdışı PWA desteği.
 
 ## Testler ve çalıştırılan kontroller
 
@@ -131,9 +140,9 @@ JSON içe/dışa aktarma, aralıklı tekrar, kelime kategorileri, quiz geçmişi
 | Komut | Kapsam | Sonuç |
 | --- | --- | --- |
 | `npm run lint` | ESLint ile statik kod kontrolü | Başarılı, hata yok |
-| `npm run build` | Vite production derlemesi | Başarılı, `dist/` üretildi |
+| `npm run build` | Vite üretim derlemesi | Başarılı, `dist/` üretildi |
 | `npm test` | `tests/vocabulary.test.js`: kayıt kimlikleri ve zaman damgaları, bozuk/geçersiz JSON, yinelenen kayıtlar, düzenleme/durum/silme serileştirmesi, normalleştirme, quiz seçenekleri ve karıştırma | Başarılı, başarısız test yok |
 
-`tests/browser-check.mjs` mevcut Playwright/Chromium fonksiyonel testidir. Kelime işlemleri, LocalStorage, flashcards, quiz, tema ve responsive görünümü kontrol eder. Önceki çalıştırmanın sonuçları 14 Kasım 2026 tarihli test raporunda kayıtlıdır; bu teslim hazırlığında tarayıcı testi yeniden çalıştırılmadı. Ekran görüntüleri mevcut rapora ait demo görselleridir.
+`tests/browser-check.mjs` mevcut Playwright/Chromium fonksiyonel testidir. Kelime işlemleri, LocalStorage, flashcards, quiz, tema ve farklı ekran boyutlarındaki görünümü kontrol eder. Önceki çalıştırmanın sonuçları 14 Kasım 2026 tarihli test raporunda kayıtlıdır; bu teslim hazırlığında tarayıcı testi yeniden çalıştırılmadı. Ekran görüntüleri mevcut rapora ait demo görselleridir.
 
 Çalıştırılan kontroller, kapsam ve test edilmeyen senaryolar için [test raporuna](docs/TESTING.md) bakın. Tekrar çalıştırılabilir tarayıcı testi `tests/browser-check.mjs` içindedir; isteğe bağlı Playwright kurulumu test raporunda açıklanır.
